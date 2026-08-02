@@ -3668,3 +3668,41 @@ nav a.active,
         padding:20px;
     }
 }
+/* MOBILE HERO FIX */
+
+@media (max-width:768px){
+
+    #home{
+        display:block;
+        width:100%;
+        padding:100px 20px 60px;
+    }
+
+    .hero-container{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero-left,
+    .hero-right{
+        width:100% !important;
+        max-width:100%;
+    }
+
+    .hero-right img{
+        width:220px;
+        margin:auto;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero-buttons a{
+        width:100%;
+        text-align:center;
+    }
+
+        }
