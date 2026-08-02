@@ -102,13 +102,10 @@ COMMON SECTION
 ========================================*/
 
 section{
-
-    padding-left:0 !important;
-    padding-right:0 !important;
-    width: 100%;
-
+    width:100%;
+    padding:90px 8%;
+    position:relative;
 }
-
 
 .section-title{
 
