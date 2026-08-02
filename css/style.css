@@ -3455,4 +3455,216 @@ section.hero .hero-right img {
     margin-top: 100px !important;
     margin-left: 20px !important;
 }
+/* ===== MCS FINAL FIXES ===== */
 
+/* Sticky header */
+header.sticky{
+    height:78px;
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+/* Active nav */
+nav a.active,
+#mobileMenu a.active{
+    color:var(--primary);
+}
+
+/* Hero tag */
+.hero-tag{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(34,197,94,.12);
+    color:var(--primary);
+    font-weight:700;
+    margin-bottom:18px;
+    letter-spacing:.5px;
+}
+
+/* Hero counters */
+.hero-counter{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.hero-counter .counter-box{
+    background:rgba(255,255,255,.10);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.hero-counter .counter-box h2{
+    color:#fff;
+    font-size:34px;
+}
+
+/* Scroll indicator */
+.scroll-indicator{
+    margin-top:25px;
+    text-align:center;
+}
+
+.scroll-indicator a{
+    color:#fff;
+    font-size:30px;
+    animation:bounce 2s infinite;
+}
+
+/* Ripple effect */
+.ripple{
+    position:absolute;
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:rgba(255,255,255,.55);
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    animation:rippleAnim .6s linear;
+}
+
+@keyframes rippleAnim{
+    from{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+    to{ opacity:0; transform:translate(-50%,-50%) scale(14); }
+}
+
+/* Product + review slider containers */
+.product-grid,
+.review-grid{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scroll-snap-type:x mandatory;
+    padding-bottom:10px;
+}
+
+.product-grid::-webkit-scrollbar,
+.review-grid::-webkit-scrollbar{
+    display:none;
+}
+
+.product-card,
+.review-card{
+    flex:0 0 calc(33.333% - 20px);
+    scroll-snap-align:start;
+}
+
+/* Slider buttons */
+.slider-controls{
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.slider-controls button{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--primary);
+    color:#fff;
+    box-shadow:var(--shadow);
+}
+
+/* Warranty box */
+.warranty-box{
+    max-width:720px;
+    margin:0 auto;
+    background:#fff;
+    padding:28px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    display:grid;
+    gap:14px;
+}
+
+.warranty-box input,
+.warranty-box button{
+    width:100%;
+    padding:16px 18px;
+    border-radius:12px;
+}
+
+.warranty-box input{
+    background:#F8FAFC;
+    border:1px solid var(--border);
+}
+
+.warranty-box button{
+    background:var(--primary);
+    color:#fff;
+    font-weight:700;
+}
+
+#warrantyResult .success,
+#warrantyResult .error{
+    padding:18px;
+    border-radius:14px;
+    margin-top:6px;
+}
+
+#warrantyResult .success{
+    background:#ECFDF5;
+    border:1px solid #86EFAC;
+}
+
+#warrantyResult .error{
+    background:#FEF2F2;
+    border:1px solid #FCA5A5;
+}
+
+/* Dark overlay for hero */
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.75));
+    z-index:1;
+}
+
+.hero-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+}
+
+.hero-container{
+    position:relative;
+    z-index:2;
+}
+
+/* Mobile */
+@media(max-width:992px){
+    .product-card,
+    .review-card{
+        flex:0 0 70%;
+    }
+
+    .hero-counter{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:576px){
+    .product-card,
+    .review-card{
+        flex:0 0 100%;
+    }
+
+    .hero-counter{
+        grid-template-columns:1fr;
+    }
+
+    .slider-controls{
+        justify-content:center;
+    }
+
+    .warranty-box{
+        padding:20px;
+    }
+}
