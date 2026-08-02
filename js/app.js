@@ -62,18 +62,13 @@ function initLoader() {
 
     if (!loader) return;
 
-    
+    setTimeout(() => {
 
-        setTimeout(() => {
+        loader.classList.add("loader-hide");
 
-            loader.classList.add("loader-hide");
-
-        }, 800);
-
-   
+    }, 800);
 
 }
-
 /* ==========================================
    NAVBAR
 ========================================== */
@@ -326,44 +321,25 @@ document.addEventListener("DOMContentLoaded", () => {
    INTRO VIDEO CONTROL
 ========================================== */
 
-const intro = document.getElementById("intro");
+/* ==========================================
+   HERO VIDEO CONTROL
+========================================== */
+
+const heroVideo = document.getElementById("heroVideo");
 const skipBtn = document.getElementById("skip");
-const video = document.getElementById("heroVideo");
 
-
-if(video){
-
-    video.play().catch(()=>{
-
+if (heroVideo) {
+    heroVideo.play().catch(() => {
         console.log("Video autoplay blocked");
-
     });
-
 }
 
+if (skipBtn && heroVideo) {
+    skipBtn.addEventListener("click", () => {
+        heroVideo.pause();
+        heroVideo.style.display = "none";
 
-if(skipBtn && intro){
-
-    skipBtn.addEventListener("click",()=>{
-
-        intro.classList.add("hide");
-
+        const overlay = document.querySelector(".hero-overlay");
+        if (overlay) overlay.style.display = "none";
     });
-
 }
-
-
-window.addEventListener("load",()=>{
-
-    if(intro){
-
-        setTimeout(()=>{
-
-            intro.classList.add("hide");
-
-        },5000);
-
-    }
-
-});
-
