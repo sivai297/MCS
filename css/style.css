@@ -59,15 +59,11 @@ html{
 
 
 body{
-
     background:#fff;
-
     color:var(--secondary);
-
     overflow-x:hidden;
-
+    width:100%;
 }
-
 
 img{
 
